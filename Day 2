@@ -1,0 +1,356 @@
+Namespace:
+Definition and Creation:Namespaces allow us to group named entities that otherwise would have global scope into narrower scopes, giving them namespace scope. This allows organizing the elements of programs into different logical scopes referred to by names. Namespace provide the space where we can define or declare identifier i.e. variable,  method, classes.
+ 
+Namespace is a feature added in C++ and not present in C.
+A namespace is a declarative region that provides a scope to the identifiers (names of the types, function, variables etc) inside it.
+Multiple namespace blocks with the same name are allowed. All declarations within those blocks are declared in the named scope.
+A namespace definition begins with the keyword namespace followed by the namespace name as follows:
+ 
+namespace namespace_name
+ 
+{
+ 
+   int x, y; // code declarations where
+ 
+             // x and y are declared in
+ 
+             // namespace_name's scope
+ 
+}
+Namespace declarations appear only at global scope.
+Namespace declarations can be nested within another namespace.
+Namespace declarations don’t have access specifiers. (Public or private)
+No need to give semicolon after the closing brace of definition of namespace.
+We can split the definition of namespace over several units.
+Defining a Namespace:
+ 
+A namespace definition begins with the keyword namespace followed by the namespace name as follows:
+namespace  namespace_name{
+     // code declarations i.e. variable  (int a;)
+     method (void add();)
+     classes ( class student{};)
+}
+ 
+ 
+ 
+ 
+It is to be noted that, there is no semicolon (;) after the closing brace.
+To call the namespace-enabled version of either function or variable, prepend the namespace name as follows:
+ 
+ 
+ 
+namespace_name: :code;  // code could be variable , function or class.
+ 
+Advantage of Namespace to avoid name collision:-
+ 
+Example, you might be writing some code that has a function called xyz() and there is another library available which is also having same function xyz(). Now the compiler has no way of knowing which version of xyz() function you are referring to within your code.
+A namespace is designed to overcome this difficulty and is used as additional information to differentiate similar functions, classes, variables etc. with the same name available in different libraries. 
+The best example of namespace scope is the C++ standard library (std) where all the classes, methods and templates are declared. Hence while writing a C++ program we usually include the directive 
+using namespace std;
+Some other differences between endl and \n are:  
+ 
+end
+ \n
+It is a manipulator. 
+It is a character.
+It doesn't occupy any memory. 
+It occupies 1 byte memory as it is a character.
+It is a keyword and would not specify any meaning when stored in a string.
+It can be stored in a string and will still convey its specific meaning of line break.
+We cannot write 'endl' in between double quotations.
+We can write '\n' in between double quotations like cout<<"\n";
+It is only supported by C++. 
+It is supported in both C and C++.
+It keeps flushing the queue in the output buffer throughout the process. 
+It flushes the output buffer only once at the end of the program
+
+ 
+Note: cout << "\n" seems performance wise better than cout << endl; unless flushing of stream is required. 
+ 
+Loops:
+ 
+1.
+while loop - First checks the condition, then executes the body.
+2.
+for loop - firstly initializes, then, condition check, execute body, update.
+3.
+do-while - firstly, execute the body then condition check
+
+ for Loop
+ 
+A for loop is a repetition control structure that allows us to write a loop that is executed a specific number of times. The loop enables us to perform n number of steps together in one line. 
+Syntax: 
+ 
+for (initialization expr; test expr; update expr)
+ 
+{   
+ 
+     // body of the loop
+ 
+     // statements we want to execute
+ 
+}
+While Loop
+ 
+While studying for loop we have seen that the number of iterations is known beforehand, i.e. the number of times the loop body is needed to be executed is known to us. while loops are used in situations where we do not know the exact number of iterations of the loop beforehand. The loop execution is terminated on the basis of the test conditions.
+Syntax: We have already stated that a loop mainly consists of three statements - initialization expression, test expression, and update expression. The syntax of the three loops - For, while, and do while mainly differs in the placement of these three statements. 
+ 
+initialization expression;
+while (test_expression)
+ 
+{
+ 
+   // statements
+ 
+ 
+ 
+  update_expression;
+}
+do-while loop
+ 
+In do-while loops also the loop execution is terminated on the basis of test conditions. The main difference between a do-while loop and the while loop is in the do-while loop the condition is tested at the end of the loop body, i.e do-while loop is exit controlled whereas the other two loops are entry controlled loops. 
+Note: In a do-while loop, the loop body will execute at least once irrespective of the test condition.
+Syntax: 
+ 
+initialization expression;
+do
+ 
+{
+ 
+   // statements
+ 
+ 
+ 
+   update_expression;
+} while (test_expression);
+What about an Infinite Loop?
+ 
+An infinite loop (sometimes called an endless loop ) is a piece of coding that lacks a functional exit so that it repeats indefinitely. An infinite loop occurs when a condition is always evaluated to be true. Usually, this is an error. 
+Syntax of if-else statement in C/C++ language is:
+ 
+if (Boolean expression)
+ 
+{
+ 
+    // Statement will execute only
+ 
+    // if Boolean expression is true
+ 
+}
+ 
+else
+ 
+{
+ 
+    // Statement will execute only if
+ 
+    // the Boolean expression is false
+ 
+}
+NOTE - Use of goto statement is highly discouraged in any programming language because it makes difficult to trace the control flow of a program, making the program hard to understand and hard to modify. As a programmer, we should avoid the use of goto statement in C/C++.
+ 
+ 
+
+ 
+if statement in C/C++
+ 
+ 
+ 
+ 
+if statement is the most simple decision-making statement. It is used to decide whether a certain statement or block of statements will be executed or not i.e if a certain condition is true then a block of statement is executed otherwise not. 
+Syntax: 
+ 
+ 
+if(condition)
+ 
+{
+ 
+   // Statements to execute if
+ 
+   // condition is true
+ 
+}
+ 
+ 
+
+ 
+if-else in C/C++
+ 
+ 
+ 
+ 
+The if statement alone tells us that if a condition is true it will execute a block of statements and if the condition is false it won’t. But what if we want to do something else if the condition is false. Here comes the C else statement. We can use the else statement with if statement to execute a block of code when the condition is false. 
+Syntax: 
+ 
+ 
+if (condition)
+ 
+{
+ 
+    // Executes this block if
+ 
+    // condition is true
+ 
+}
+ 
+else
+ 
+{
+ 
+    // Executes this block if
+ 
+    // condition is false
+ 
+}
+ 
+ 
+Flowchart: 
+ 
+ 
+
+ 
+nested-if in C/C++
+ 
+ 
+ 
+ 
+A nested if in C is an if statement that is the target of another if statement. Nested if statements mean an if statement inside another if statement. Yes, both C and C++ allow us to nested if statements within if statements, i.e, we can place an if statement inside another if statement. 
+Syntax: 
+ 
+ 
+if (condition1)
+ 
+{
+ 
+   // Executes when condition1 is true
+ 
+   if (condition2)
+ 
+   {
+ 
+      // Executes when condition2 is true
+ 
+   }
+ 
+}
+ 
+ 
+Flowchart 
+ 
+ 
+
+ 
+if-else-if ladder in C/C++
+ 
+ 
+ 
+Here, a user can decide among multiple options. The C if statements are executed from the top down. As soon as one of the conditions controlling the if is true, the statement associated with that if is executed, and the rest of the C else-if ladder is bypassed. If none of the conditions are true, then the final else statement will be executed. 
+Syntax: 
+ 
+ 
+if (condition)
+ 
+    statement;
+ 
+else if (condition)
+ 
+    statement;
+ 
+.
+ 
+.
+ 
+else
+ 
+    statement;
+ 
+ 
+
+ 
+Jump Statements in C/C++
+ 
+ 
+ 
+These statements are used in C orC++ for the unconditional flow of control throughout the functions in a program. They support four types of jump statements:
+ 
+ 
+C break: This loop control statement is used to terminate the loop. As soon as the break statement is encountered from within a loop, the loop iterations stop there, and control returns from the loop immediately to the first statement after the loop. 
+Syntax: 
+ 
+break;
+
+Basically, break statements are used in situations when we are not sure about the actual number of iterations for the loop or we want to terminate the loop based on some condition. 
+ 
+
+ 
+C continues: This loop control statement is just like the break statement. The continue statement is opposite to that of the break statement, instead of terminating the loop, it forces to execute the next iteration of the loop. 
+As the name suggests the continue statement forces the loop to continue or execute the next iteration. When the continue statement is executed in the loop, the code inside the loop following the continue statement will be skipped and the next iteration of the loop will begin. 
+Syntax: 
+ 
+continue;
+
+ 
+
+ 
+C goto: The goto statement in C/C++ also referred to as unconditional jump statement can be used to jump from one point to another within a function. 
+Syntax: 
+ 
+Syntax1      |   Syntax2
+ 
+----------------------------
+ 
+goto label;  |    label: 
+ 
+.            |    .
+ 
+.            |    .
+ 
+.            |    .
+ 
+label:       |    goto label;
+
+In the above syntax, the first line tells the compiler to go to or jump to the statement marked as a label. Here label is a user-defined identifier that indicates the target statement. The statement immediately followed after 'label:' is the destination statement. The 'label:' can also appear before the 'goto label;' statement in the above syntax. 
+ 
+
+ 
+C return: The return in C or C++ returns the flow of the execution to the function from where it is called. This statement does not mandatorily need any conditional statements. As soon as the statement is executed, the flow of the program stops immediately and return the control from where it was called. The return statement may or may not return anything for a void function, but for a non-void function, a return value is must be returned. 
+Syntax: 
+ 
+return[expression];
+Switch case statement evaluates a given expression and based on the evaluated value(matching a certain condition), it executes the statements associated with it. Basically, it is used to perform different actions based on different conditions(cases). 
+ 
+Switch case statements follow a selection-control mechanism and allow a value to change control of execution.
+They are a substitute for long if statements that compare a variable to several integral values.
+The switch statement is a multiway branch statement. It provides an easy way to dispatch execution to different parts of code based on the value of the expression.
+ 
+Syntax: 
+ 
+switch (n)
+ 
+{
+ 
+    case 1: // code to be executed if n = 1;
+ 
+        break;
+ 
+    case 2: // code to be executed if n = 2;
+ 
+        break;
+ 
+    default: // code to be executed if n doesn't match any cases
+ 
+}
+ 
+Some important keywords:
+ 
+ 
+ 
+1) Break: This keyword is used to stop the execution inside a switch block. It helps to terminate the switch block and break out of it.
+ 
+ 
+ 
+2) Default: This keyword is used to specify the set of statements to execute if there is no case match.
+ 
+ 
+Note: Sometimes when default is not placed at the end of switch case program, we should use break statement with the default case.
+ 
